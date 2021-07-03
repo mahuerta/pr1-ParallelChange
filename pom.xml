@@ -24,6 +24,8 @@
     <modules>
         <module>parallel-change-v1</module>
         <module>parallel-change-v2</module>
+        <module>parallel-change-v3</module>
+        <module>parallel-change-v4</module>
     </modules>
 
     <properties>
