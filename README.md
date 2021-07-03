@@ -28,11 +28,13 @@ Para ejecutar la aplicación necesitamos una versión de mysql8, en nuestro caso
 > docker run --rm --name mysql -d -e MYSQL_ROOT_PASSWORD=pass -e MYSQL_DATABASE=test -p 3306:3306 mysql:8
 
 ## V1
+Disponible en el puerto 8881
 Versión inicial de la aplicación.
 Se desea cambiar el atributo description por preface.
 Se trata de un cambio incompatible, debemos dividirlo en fases.
 
 ## V2
+Disponible en el puerto 8882
 #### BBDD:
 - Añadimos la nueva columna de preface con la misma longitud que description.
 - Copiamos la información de description en esta nueva columna preface.
@@ -47,6 +49,7 @@ Se tratan de versiones compatibles entre sí.
 Hemos aprovechado para actualizar los test de Selenium y los templates del front.
 
 ## V3
+Disponible en el puerto 8883
 #### BBDD:
 - Copiamos la información de description en esta nueva columna preface porque pueden haberse dado de alta datos desde la V1 antes de pasar a este cambio.
 - Quitamos la restricción de no nulo a description.
@@ -56,6 +59,7 @@ Hemos aprovechado para actualizar los test de Selenium y los templates del front
 - Esta versión ya no es compatible con V1 por poder tener nulos en descripción.
 
 ## V4
+Disponible en el puerto 8884
 #### BBDD:
 - Eliminamos description.
 - Actualizamos preface para que los datos que fueran nulos tengan cadena vacía.
@@ -65,6 +69,7 @@ Hemos aprovechado para actualizar los test de Selenium y los templates del front
 - Ya no se utilizaba description.
 
 ## V5
+Disponible en el puerto 8885
 #### BBDD:
 - Añadimos el campo price de tipo int.
 
@@ -72,6 +77,7 @@ Hemos aprovechado para actualizar los test de Selenium y los templates del front
 - Añadimos el uso del campo price, no hemos actualizado la parte front de la aplicación al no ser necesaria.
 
 ## V6
+Disponible en el puerto 8886
 Hemos considerado que se trata de un cambio compatible, al dar de alta integers en un campo float no hay problemas.
 #### BBDD:
 - Hacemos el cambio del campo de tipo int a tipo float.
