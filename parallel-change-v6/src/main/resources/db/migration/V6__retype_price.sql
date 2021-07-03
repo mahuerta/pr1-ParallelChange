@@ -1,0 +1,2 @@
+-- REMOVE THE COLUMN
+ALTER TABLE book MODIFY price float(24);
