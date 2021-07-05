@@ -1,0 +1,2 @@
+-- REMOVE THE COLUMN
+ALTER TABLE book DROP new_price;

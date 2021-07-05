@@ -78,10 +78,55 @@ Disponible en el puerto 8885
 
 ## V6
 Disponible en el puerto 8886
-Hemos considerado que se trata de un cambio compatible, al dar de alta integers en un campo float no hay problemas.
+En la primera versión que hemos realizado hemos considerado que se trata de un cambio compatible, al dar de alta integers en un campo float no hay problemas.
+Hemos hecho el cambio directamente en un único paso.
+Al leer slack hemos visto que había que aplicar el enfoque de parallel change también en este cambio por lo que lo hemos aplicado en los siguientes pasos.
+
 #### BBDD:
-- Hacemos el cambio del campo de tipo int a tipo float.
+- Añadimos la nueva columna de new_price de tipo float.
+- Copiamos la información de price en esta nueva columna float.
 
 #### Java:
-- Actualizamos los tipos de Integer a Float.
+- Actualizamos la entidad new_price. 
+  Al meter en el dato price, hacemos un Round del valor float.
+  Devolvemos price en float en caso de no existir new_price.
+- Al guardar el price debe guardar también en new_price.
 
+## V7
+#### BBDD:
+- Copiamos la información de price en esta nueva columna float.
+
+#### Java:
+- Sólo usamos new_price
+
+## V8
+#### BBDD:
+- Eliminamos la columna de price.
+
+#### Java:
+- Seguimos sólo usando new_price.
+
+## V9
+Queremos conseguir que el nombre del campo sea el mismo, es decir, que se llame price.
+
+#### BBDD:
+- Añadimos la columna de price con los datos de new_price.
+- Actualizamos los datos en price de new_price.
+
+#### Java:
+- Guardamos en ambos, retornamos new_price en caso de no existir price.
+
+## V10
+En esta versión sólo usamos price.
+
+#### BBDD:
+- Añadimos la columna de price con los datos de new_price.
+
+#### Java:
+- Sólo usamos price
+
+## V11
+En esta versión sólo usamos price.
+
+#### BBDD:
+- Eliminamos la columna de new_price.
