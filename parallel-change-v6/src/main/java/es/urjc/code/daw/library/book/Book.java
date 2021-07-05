@@ -16,16 +16,18 @@ public class Book {
 
   private String preface;
 
-  private Float price;
+  private Integer price;
+  private Float newPrice;
 
   public Book() {
   }
 
-  public Book(String nombre, String preface, Float price) {
+  public Book(String nombre, String preface, Float newPrice) {
     super();
     this.title = nombre;
     this.preface = preface;
-    this.price = price;
+    this.newPrice = newPrice;
+    this.price = Math.round(newPrice);
   }
 
   public String getTitle() {
@@ -52,12 +54,13 @@ public class Book {
     this.id = id;
   }
 
-  public Float getPrice() {
-    return price;
+  public Float getNewPrice() {
+    return this.newPrice != null ? this.newPrice : Float.valueOf(this.price);
   }
 
-  public void setPrice(Float price) {
-    this.price = price;
+  public void setNewPrice(Float newPrice) {
+    this.newPrice = newPrice;
+    this.price = Math.round(newPrice);
   }
 
   @Override
