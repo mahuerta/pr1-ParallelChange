@@ -30,7 +30,7 @@ public class Book {
     this.title = nombre;
     this.preface = preface;
     this.newPrice = newPrice;
-    this.price = (newPrice != null) ? Math.round(newPrice) : 0;
+    this.price = (newPrice != null) ? Math.round(newPrice) : null;
   }
 
   public String getTitle() {
