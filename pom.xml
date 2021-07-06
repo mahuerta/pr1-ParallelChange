@@ -32,7 +32,7 @@
         <module>parallel-change-v8</module>
         <module>parallel-change-v9</module>
         <module>parallel-change-v10</module>
-
+        <module>parallel-change-v11</module>
     </modules>
 
     <properties>
