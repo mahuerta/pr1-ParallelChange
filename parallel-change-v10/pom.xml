@@ -5,7 +5,7 @@
 
 	<groupId>es.urjc.code</groupId>
 	<artifactId>jc.blazquez.2020-ma.huerta-v10</artifactId>
-	<version>6.0.0</version>
+	<version>10.0.0</version>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
