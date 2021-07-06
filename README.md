@@ -86,6 +86,7 @@ Disponible en el puerto 8885.
 Disponible en el puerto 8886.
 En la primera versión que hemos realizado hemos considerado que se trata de un cambio compatible, al dar de alta integers en un campo float no hay problemas y simplemente hemos modificado el tipo en BBDD.
 Al leer slack hemos visto que había que aplicar el enfoque de parallel change también en este cambio por lo que lo hemos aplicado en los siguientes pasos.
+Utilizamos la anotación @JsonProperty("price") para que siempre se devuelva el nombre de la columna price a pesar de usar el atributo y columna new_price.
 
 #### BBDD:
 - Añadimos la nueva columna de new_price de tipo float.
@@ -99,6 +100,7 @@ Al leer slack hemos visto que había que aplicar el enfoque de parallel change t
 
 ## V7
 Disponible en el puerto 8887.
+Utilizamos la anotación @JsonProperty("price") para que siempre se devuelva el nombre de la columna price a pesar de usar el atributo y columna new_price.
 
 #### BBDD:
 - Copiamos la información de price en esta nueva columna float.
@@ -108,6 +110,7 @@ Disponible en el puerto 8887.
 
 ## V8
 Disponible en el puerto 8888.
+Utilizamos la anotación @JsonProperty("price") para que siempre se devuelva el nombre de la columna price a pesar de usar el atributo y columna new_price.
 
 #### BBDD:
 - Eliminamos la columna de price.

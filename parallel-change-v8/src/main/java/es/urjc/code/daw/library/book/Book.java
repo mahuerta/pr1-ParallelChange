@@ -1,5 +1,7 @@
 package es.urjc.code.daw.library.book;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,6 +18,8 @@ public class Book {
 
   private String preface;
 
+  @JsonProperty("price")
+  @Column(name = "new_price")
   private Float newPrice;
 
   public Book() {

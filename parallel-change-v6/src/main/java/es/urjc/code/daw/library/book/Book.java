@@ -1,11 +1,11 @@
 package es.urjc.code.daw.library.book;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 public class Book {
@@ -20,6 +20,7 @@ public class Book {
 
   private Integer price;
 
+  @JsonProperty("price")
   @Column(name = "new_price")
   private Float newPrice;
 
@@ -60,7 +61,7 @@ public class Book {
 
   public Float getNewPrice() {
     return this.newPrice != null ? this.newPrice :
-        (this.price != null ? Float.valueOf(this.price): nullBook.java);
+        (this.price != null ? Float.valueOf(this.price): null);
   }
 
   public void setNewPrice(Float newPrice) {
