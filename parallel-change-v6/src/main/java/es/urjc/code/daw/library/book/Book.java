@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 public class Book {
@@ -58,7 +59,8 @@ public class Book {
   }
 
   public Float getNewPrice() {
-    return this.newPrice != null ? this.newPrice : Float.valueOf(this.price);
+    return this.newPrice != null ? this.newPrice :
+        (this.price != null ? Float.valueOf(this.price): nullBook.java);
   }
 
   public void setNewPrice(Float newPrice) {

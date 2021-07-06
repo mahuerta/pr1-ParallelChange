@@ -27,6 +27,12 @@ Hemos ido ejecutando y actualizando los test en cada versión.
 Para ejecutar la aplicación necesitamos una versión de mysql8, en nuestro caso la lanzamos en un contenedor docker: 
 > docker run --rm --name mysql -d -e MYSQL_ROOT_PASSWORD=pass -e MYSQL_DATABASE=test -p 3306:3306 mysql:8
 
+Para probar hemos ido ejecutando creaciones de libros en las diferentes versiones y la obtención de ellos de forma conjunta e individual.
+V1-V2
+V2-V3
+V3-V4
+...
+
 ## V1
 Disponible en el puerto 8881.
 Versión inicial de la aplicación.
